@@ -34,7 +34,7 @@ Backup-GPO -All -Path "C:\GPOBackups"
 Restore-GPO -All -Path "C:\GPOBackups"
 ```
 
-#Active Directory Management:
+# Active Directory Management:
 #### Get user information
 ```ps1
 Get-ADUser -Filter * | Export-Csv -Path "C:\ADUsers.csv" -NoTypeInformation
@@ -116,7 +116,7 @@ Get-Acl -Path "C:\Path\To\File.txt" | Format-List
 icacls "C:\Path\To\File.txt" /grant Users:(OI)(CI)F
 ```
 # Remote Desktop Management
-####Connect to remote desktop
+#### Connect to remote desktop
 ```ps1
 mstsc.exe /v:ComputerName
 ```
