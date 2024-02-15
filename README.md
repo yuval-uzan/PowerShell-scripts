@@ -7,7 +7,7 @@ Get-WindowsUpdate
 ```ps1
 Install-WindowsUpdate -AcceptAll
 ```
-#User Account Management
+# User Account Management
 #### Create new user account
 ```ps1
 New-ADUser -Name "John Doe" -SamAccountName "jdoe" -AccountPassword (ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force) -Enabled $true
@@ -24,9 +24,6 @@ Enable-ADAccount -Identity "jdoe"
 ```ps1
 Set-ADAccountPassword -Identity "jdoe" -Reset -NewPassword (ConvertTo-SecureString "NewP@ssw0rd" -AsPlainText -Force)
 ```
-
-
-
 # Group Policy Management
 #### Backup GPO
 ```ps1
@@ -59,7 +56,7 @@ Get-WmiObject Win32_OperatingSystem
 ```ps1
 Restart-Computer -ComputerName "ServerName" -Force
 ```
-#Software Deployment and Management
+# Software Deployment and Management
 #### Install software
 ```ps1
 Start-Process -FilePath "installer.exe" -ArgumentList "/S" -Wait
@@ -83,7 +80,7 @@ Test-NetConnection -ComputerName "example.com"
 Get-WinEvent -LogName "Application" -MaxEvents 100 | Export-Csv -Path "C:\ApplicationEvents.csv" -NoTypeInformation
 ```
 # Disk Management
-####Get disk information
+#### Get disk information
 ```ps1
 Get-WmiObject Win32_LogicalDisk
 ```
@@ -92,7 +89,7 @@ Get-WmiObject Win32_LogicalDisk
 Get-WmiObject Win32_LogicalDisk | Where-Object { $_.DeviceID -eq "C:" } | Select-Object Size, FreeSpace
 ```
 # Service Management
-####Start service
+#### Start service
 ```ps1
 Start-Service -Name "ServiceName"
 ```
